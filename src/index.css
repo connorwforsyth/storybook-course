@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "@fontsource/ibm-plex-sans";
+@import "./tokens.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply bg-primary-100 dark:bg-primary-950;
+}
