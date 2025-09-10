@@ -3,7 +3,7 @@ import { useMemo, useState, type ComponentProps } from "react";
 import { isTooLong, getLength } from "./get-length";
 import { twMerge } from "tailwind-merge";
 
-type TextAreaProps = ComponentProps<"textarea"> & { label: string };
+export type TextAreaProps = ComponentProps<"textarea"> & { label: string };
 
 export const TextArea = ({
   label,

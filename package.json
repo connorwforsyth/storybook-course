@@ -1,17 +1,45 @@
 {
-  "name": "storybook-course",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@connorforsyth/scoped-tailwind-design-system",
+  "private": false,
+  "version": "1.0.0",
+  "description": "A scoped Tailwind CSS design system with React components",
+  "keywords": ["react", "tailwind", "design-system", "components", "ui"],
+  "author": "Connor Forsyth",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/connorwforsyth/storybook-course.git"
+  },
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/index.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "test": "npx test-storybook --browsers chromium firefox webkit",
-    "build": "tsc -b && vite build",
+    "build:lib": "vite build --config vite.lib.config.ts && tsc --project tsconfig.lib.json",
+    "build:storybook": "storybook build",
+    "build": "npm run build:lib",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_4ce74525bf40fbb"
+    "chromatic": "npx chromatic --project-token=chpt_4ce74525bf40fbb",
+    "prepublishOnly": "npm run build:lib"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "dependencies": {
     "@fontsource-variable/ibm-plex-sans": "^5.2.6",
