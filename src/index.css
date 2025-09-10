@@ -1,9 +1,9 @@
 @import "tailwindcss";
-@import "@fontsource/ibm-plex-sans";
+@import "@fontsource-variable/ibm-plex-sans";
 @config "../tailwind.config.ts";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {
-  @apply bg-primary-100 dark:bg-primary-950;
+  @apply dark:bg-primary-950;
 }

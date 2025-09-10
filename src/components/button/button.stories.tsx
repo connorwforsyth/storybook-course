@@ -2,13 +2,21 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "./button";
 
 const meta = {
-  title: "Button",
+  title: "Components/Button",
   component: Button,
   args: {
     children: "Button",
     disabled: false,
   },
   argTypes: {
+    children: {
+      name: "label",
+      control: "text",
+      description: "The label of the button",
+      // table: {
+      //   disable: true,
+      // },
+    },
     disabled: { control: "boolean" },
     variant: { control: "select" },
     size: { control: "select" },

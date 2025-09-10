@@ -1,0 +1,33 @@
+import {
+  Meta,
+  ColorPalette,
+  ColorItem,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import { colors } from "./colors";
+
+<Meta title="Tokens/Colors" />
+
+<ColorPalette>
+{Object.entries({...colors.palette, ...colors.backgroundColor, ...colors.textColor}).map(([key, value], index) => (
+  <>
+  <h2 className="text-xl">
+    {(Object.keys(colors.palette)[0] === key && "Palette Colors") ||
+      (Object.keys(colors.backgroundColor)[0] === key && "Background Colors") ||
+      (Object.keys(colors.textColor)[0] === key && "Text Colors")}
+  </h2>
+
+    <ColorItem
+      title={
+        colors.palette[key] ? `Palette-${key}` :
+        colors.backgroundColor[key] ? `Background-${key}` :
+        colors.textColor[key] ? `Text-${key}` :
+        key
+      }
+      subtitle={`${colors.textColor[key] ? "text-" : "" }${key}-[value]`}
+      colors={value}
+    />
+
+  </>
+))}
+</ColorPalette>
