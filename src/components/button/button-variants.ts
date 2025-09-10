@@ -1,59 +1,28 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
 export const variants = cva(
-  [
-    "font-semibold",
-    "border",
-    "rounded",
-    "shadow-sm",
-    "inline-flex",
-    "items-center",
-    "cursor-pointer",
-    "select-none",
-    "gap-1.5",
-    "focus-visible:outline",
-    "focus-visible:outline-2",
-    "focus-visible:outline-offset-2",
-    "transition-colors",
-    "disabled:opacity-50",
-    "disabled:cursor-not-allowed",
-  ],
+  "text-brand-white inline-flex cursor-pointer items-center gap-1.5 rounded border font-semibold shadow-sm transition-colors select-none focus-visible:outline focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
-        primary: [
-          "bg-primary-600",
-          "text-white",
-          "border-transparent",
-          "hover:bg-primary-500",
-          "active:bg-primary-400",
-        ],
-        secondary: [
-          "bg-white",
-          "text-slate-900",
-          "border-slate-300",
-          "hover:bg-slate-50",
-          "active:bg-slate-100",
-        ],
-        destructive: [
-          "bg-danger-600",
-          "text-white",
-          "border-transparent",
-          "hover:bg-danger-500",
-          "active:bg-danger-400",
-        ],
+        primary:
+          "bg-primary-600 hover:bg-primary-500 active:bg-primary-400 border-transparent",
+        secondary:
+          "text-brand-black border-slate-300 bg-slate-50 hover:bg-slate-50 active:bg-slate-100",
+        destructive:
+          "bg-danger-600 hover:bg-danger-500 active:bg-danger-400 border-transparent",
       },
       size: {
-        small: "text-sm px-2 py-1",
-        medium: "text-sm px-3 py-1.5",
-        large: "text-base px-4 py-2",
+        small: "px-2 py-1 text-sm",
+        medium: "px-3 py-1.5 text-base",
+        large: "px-4 py-4 text-lg",
       },
     },
     defaultVariants: {
-      variant: "secondary",
+      variant: "primary",
       size: "medium",
     },
-  }
+  },
 );
 
 export type ButtonVariants = VariantProps<typeof variants>;

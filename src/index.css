@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource/ibm-plex-sans";
-@import "./tokens.css";
+@config "../tailwind.config.ts";
 
 @custom-variant dark (&:where(.dark, .dark *));
 

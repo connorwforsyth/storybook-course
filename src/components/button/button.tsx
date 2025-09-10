@@ -1,7 +1,9 @@
 import { type ComponentProps } from "react";
 import { variants, type ButtonVariants } from "./button-variants";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
-type ButtonProps = ComponentProps<"button"> & ButtonVariants;
+export type ButtonProps = ComponentProps<"button"> & ButtonVariants;
 
 export const Button = ({
   variant = "primary",
@@ -10,6 +12,9 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <button {...props} className={variants({ variant, size, className })} />
+    <button
+      {...props}
+      className={clsx(twMerge(variants({ variant, size, className })))}
+    />
   );
 };

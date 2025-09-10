@@ -7,14 +7,13 @@ const meta = {
   args: {
     children: "Button",
     disabled: false,
-    size: "medium",
   },
   argTypes: {
     disabled: { control: "boolean" },
     variant: { control: "select" },
     size: { control: "select" },
   },
-} satisfies Meta;
+} satisfies Meta<typeof Button>;
 
 export default meta;
 
